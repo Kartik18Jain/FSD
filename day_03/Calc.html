@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="calc.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+
+<h1>Simple Interest Calculator</h1>
+
+<form id="InterestForm">
+
+<label for="principal">Principal Amount</label>
+<input type="number" id="principal" required>
+
+<label for="rate">Rate of Interest (%)</label>
+<input type="number" id="rate" required>
+
+<label for="time">Time (Years)</label>
+<input type="number" id="time" required>
+
+<button type="button" onclick="calculateInterest()">
+Calculate Interest
+</button>
+
+</form>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function calculateInterest(){
+
+    let principal = Number(document.getElementById("principal").value);
+    let rate = Number(document.getElementById("rate").value);
+    let time = Number(document.getElementById("time").value);
+
+    let interest = (principal * rate * time) / 100;
+    let finalAmount = principal + interest;
+
+    document.getElementById("result").innerHTML =
+    `Simple Interest: ₹${interest.toFixed(2)}<br>
+     Final Amount: ₹${finalAmount.toFixed(2)}`;
+}
+</script>
+</body>
+</html>
+
+
+
