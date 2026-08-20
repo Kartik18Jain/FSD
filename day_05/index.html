@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products</title>
+
+    <link rel="stylesheet" href="./product.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>My Store</h1>
+
+        <button id="cart-btn">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+    </header>
+
+
+    <main>
+
+        <div id="products-container"></div>
+
+
+        <!-- Cart Section -->
+        <section id="cart-section">
+
+            <div class="cart-header">
+                <h1>My Cart</h1>
+
+                <button id="close-cart">
+                    ✕
+                </button>
+            </div>
+
+            <div id="cart-container"></div>
+
+            <div id="cart-footer">
+                <h2>
+                    Total:
+                    $<span id="cart-total">0.00</span>
+                </h2>
+
+                <button id="checkout-btn">
+                    Proceed to Checkout
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+    </footer>
+
+
+    <script src="./ecommers.js"></script>
+
+</body>
+
+</html>
