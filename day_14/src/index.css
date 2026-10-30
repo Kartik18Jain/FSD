@@ -109,3 +109,143 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0, var(--accent-bg), transparent 42%),
+    var(--bg);
+}
+
+#root {
+  width: min(100% - 32px, 680px);
+  max-width: 680px;
+  min-height: 0;
+  margin: clamp(24px, 8vh, 80px) auto;
+  padding: clamp(24px, 5vw, 48px);
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+#root h1 {
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+#root form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+#root input,
+#root textarea,
+#root select {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+#root form input {
+  flex: 1;
+}
+
+#root input:focus,
+#root textarea:focus,
+#root select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+#root button {
+  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+#root button:hover {
+  filter: brightness(1.08);
+}
+
+#root button:active {
+  transform: translateY(1px);
+}
+
+#root ul,
+#root ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#root li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--social-bg);
+  color: var(--text-h);
+  text-align: left;
+}
+
+#root li input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  accent-color: var(--accent);
+}
+
+#root li button {
+  margin-left: auto;
+  padding: 6px 10px;
+  border-color: var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+}
+
+#root li button:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+#root p {
+  color: var(--text);
+}
+
+@media (max-width: 520px) {
+  #root {
+    width: calc(100% - 24px);
+    margin: 12px auto;
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  #root form {
+    flex-direction: column;
+  }
+
+  #root form button {
+    width: 100%;
+  }
+}
