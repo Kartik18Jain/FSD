@@ -9,6 +9,20 @@ const App = () => {
     setTask("");
     console.log(todoList);
   };
+  const [editingIndex, setEditingIndex] = React.useState(null);
+  const editHandler = (index) => {
+    setTask(todoList[index]);
+    setEditingIndex(index);
+  };
+
+  const updateHandler = () => {
+    const newTodoList = [...todoList];
+    newTodoList[editingIndex] = task;
+    setTodoList(newTodoList);
+    setTask("");
+    setEditingIndex(null);
+  };
+  
   return (
     <div>
       <h1>To do list </h1>
@@ -17,7 +31,11 @@ const App = () => {
         value={task}
         onChange={(e) => setTask(e.target.value)}
       ></input>
-      <button onClick={addHandler}>Add Task</button>
+      {editingIndex === null ? (
+        <button onClick={addHandler}>Add Task</button>
+      ) : (
+        <button onClick={updateHandler}>Update Task</button>
+      )}
       <br></br>
       {todoList.map((task, index)=> (
         <div key={index}>
